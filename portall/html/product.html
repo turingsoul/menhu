@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>xDataInsight-一站式敏捷大数据分析平台</title>
+	<meta name="author" content="chiring" />
+	<link rel="shortcut icon" href="../img/smallLogo.ico" type="image/x-icon" />
+    <meta name="description" content="xDataInsight从设计、开发到导入，协助企业建构大数据平台， 为数据分析打好基础，让数据与洞察更近一步" />
+    <meta name="keywords"  content="xdatainsight,xdata,商业智能,BI" />
+	<meta name="Resource-type" content="Document" />
+
+
+
+	<link rel="stylesheet" type="text/css" href="../css/fullpage.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/examples.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/1000Screen.css"/>
+	<style>
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/fullpage.js" type="text/javascript" charset="utf-8"></script>
+<!--浮动顶栏-->
+<div class="commonHeader">
+	<a href="home.html#firstPage"><img class="xdtLogo" src="../img/logo.png"/></a>
+	<div class="phoneNumber">028-86661321</div>
+	<div class="phone"></div>
+	<a class="btn_login" href="https://www.xdatainsight.com/xdatainsight/Login" target="_blank">登录</a>
+	<a class="btn_usefree" href="xdatainsight.html#10thPage">免费试用</a>
+	<div class="toggle"></div>
+</div>
+<!--菜单栏-->
+<div id="bigmenu">
+	<div class="menu">
+		<div class="menuContainer">
+			<button class="btn_closeMenu btn_close"></button>
+			<nav class="slide-nav">
+				<ul>
+					<li class="rowOne">
+						<a class="oneStand" href="home.html#firstPage">首页</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">产品中心</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="product.html">InsightView-行数</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="xdatainsight.html">xDataInsight-行明</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="icloudMiner.html">iCloudMiner-行智</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">行业案例</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=1">电商</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=2">政府</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=3">教育</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=4">制造</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="helpDoc.html">帮助中心</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">关于我们</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/about.aspx?t=10" target="_blank">公司介绍</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="aboutus.html">研发团队</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=17" target="_blank">公司动态</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" target="_blank">媒体报道</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="menuCollapse">
+		</div>
+	</div>
+</div>
+
+<div id="fullpage">
+	<!--第一部分-->
+	<div class="section fp-auto-height" id="section0" data-anchor="firstPage">
+		<!--centerFont-->
+		<div class="height800 positionRel">
+			<div class="full-wid height600 insightVieweBanner">
+			</div>
+			<div class="bgBlue width60P height300 bottom50 leftP20">
+				<h2 class="marTop30"><span class="white">InsightView-行数</span></h2>
+				<div class="full-wid">
+		    		<h3><span class="width28 height3 bgWhite inlineBlock"></span></h3>
+		    	</div>
+		    	<h2 class="marTop30"><span class="white">才华横溢的可视化</span></h2>
+		    	<h4 class="alignCenter marTop40 "><span class="white width70P">InsightView行数是可视化技术与艺术的完美结合，它借助图形化的手段，清晰有效地传达与沟通信息</span></h2>
+			</div>
+		</div>
+		
+		
+	</div>
+	<!--第二部分-->
+	<div class="section" id="section21" data-anchor="secondPage">
+	    <!--centerpart-->
+	    <div class="container">
+	    	<!--飞机-->
+	    	<div class="full-wid">
+	    		<h2 class="white">产品功能</h2>
+	    	</div>
+	    	<!--蓝色标记-->
+	    	<div class="full-wid">
+	    		<h3><span class="width28 height3 bgBlue inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop30">
+	    		<h3 class="white alignLeft marTop30 marLeftP15 ">丰富的可视化组件</h3>
+	    	</div>
+	    	<div class="full-wid marTop30">
+	    		<h4 class="normal alignLeft marLeftP15 width70P"><span class="grey">平台以模块化插件化的方式无缝集成echarts、D3等可视化库，提供可视化图表功能。支持40+常规图表、地图图表、自定义组件、交互控件。提供统计可视化、高维可视化、大数据可视化等可视化手段</span></h3>
+	    	</div>
+	    	<div class="full-wid alignCenter heightM200 marTop30">
+	    		<img data-src="../img/qiuqiu1.png"/>
+	    	</div>
+	    </div>
+	</div>
+	<div class="section" id="section22" data-anchor="3thPage">
+		<div class="container">
+			<div class="full-wid">
+				<h2 class="white">拖拽式操作</h2>
+			</div>
+			<div class="full-wid marTop30">
+				<h4 class="grey">平台采用react技术mvvc框架开发，采用网格布局与自由布局支持所见即所得的拖拽式，仅需拖拽即可完成数据配置和图表布局，无需编程就能轻松完成美观专业的仪表盘设计</h4>
+			</div>
+			<div class="full-wid alignCenter heightM150 marTop30">
+				<img data-src="../img/dashboard.gif"/>
+			</div>
+		</div>
+	   
+	</div>
+	<div class="section" id="section23" data-anchor="4thPage">
+		<div class="container">
+			<div class="full-wid">
+				<h2 class="white alignLeft marLeftP15">一键切换设计主题</h2>
+			</div>
+			<div class="full-wid marTop30">
+				<h4 class="grey alignLeft marLeftP15">内置10余种配色精美的主题，并能统一调整背景、文字、线条颜色，保障设计的美观性</h4>
+			</div>
+			<div class="full-wid alignCenter heightM150 marTop30">
+				<img data-src="../img/olap1.png"/>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section24" data-anchor="5thPage">
+		<div class="container">
+			<div class="full-wid">
+				<h2 class="white">支持开发插件</h2>
+			</div>
+			<div class="full-wid marTop30">
+				<h4 class="grey">通过开发插件形式对可视化界面进行扩展开发，可实现非常规的布局和酷炫的动画效果</h4>
+			</div>
+			<div class="full-wid alignCenter heightM50 marTop30">
+				<img data-src="../img/dashboard1.jpg"/>
+			</div>
+		</div>
+	</div>
+	<div class="section fp-auto-height" id="section27" data-anchor="6thPage">
+		<div class="full-wid marTop30">
+    		<h2 class="black">主要特征</h2>
+    	</div>
+    	<!--蓝色标记-->
+    	<div class="full-wid">
+    		<h3><span class="width28 height3 bgBlue inlineBlock"></span></h3>
+    	</div>
+    	<!--切换动画区域-->
+    	<div class=" alignCenter height500">
+    		<div class=" width70P height300 ">
+    			<div class="full-wid height250">
+    				<div class="col-4 cursorPointer">
+	    				<div class="height200  alignCenter">
+	    					<img data-src="../img/spotLight11.png"/>
+	    				</div>
+	    				<div class="height200  alignCenter flexDirectionColumn">
+	    					<div class="height50">
+	    						<h3>强大的数据挖掘分析能力</h3>
+	    					</div>
+	    					<div class="width300  alignCenter height100">
+	    						<h4>丰富的数据展现组件，自由灵活的布局多种主题样式，全方位保障数据的呈现</h4>	
+	    					</div>
+	    					
+	    				</div>
+	    			</div>
+	    			<div class="col-4 cursorPointer">
+	    				<div class="height200  alignCenter">
+	    					<img data-src="../img/spotLight21.png"/>
+	    				</div>
+	    				<div class="height200  alignCenter flexDirectionColumn">
+	    					<div class="height50">
+	    						<h3>简单易用，快速上手</h3>
+	    					</div>
+	    					<div class="width250  alignCenter height100">
+	    						<h4>全拖拽式操作，无需技术背景，轻松搭建所见即所得的可视化分析</h4>	
+	    					</div>
+	    					
+	    				</div>
+	    			</div>
+	    			<div class="col-4 cursorPointer">
+	    				<div class="height200  alignCenter">
+	    					<img data-src="../img/spotLight31.png"/>
+	    				</div>
+	    				<div class="height200  alignCenter flexDirectionColumn">
+	    					<div class="height50">
+	    						<h3>灵活的自助式数据分析</h3>
+	    					</div>
+	    					<div class="width250  alignCenter height100">
+	    						<h4>通过多种灵活高效的数据分析手段与数据轻松交流，让数据说话</h4>	
+	    					</div>
+	    					
+	    				</div>
+	    			</div>
+    			</div>
+    			
+    		</div>
+    	</div>
+	</div>
+	<div class="section fp-auto-height" id="section27" data-anchor="7thPage">
+		<div class="outline height950">
+			<div class="container"> 
+				<div class="full-wid">
+		    		<h2 class="black">产品架构</h2>
+		    	</div>
+		    	<!--蓝色标记-->
+		    	<div class="full-wid">
+		    		<h3><span class="width28 height3 bgBlue inlineBlock"></span></h3>
+		    	</div>
+		    	<div class="full-wid alignCenter  marTop30 ">
+					<img data-src="../img/outline1.png"/>
+				</div>
+				<!--<div class="full-wid alignCenter">
+		    		<h5 class="normal  alignLeft"><span class="darkGrey  fourTypeSizeMarginL">1.数据适配与存储层：统一的数据仓库和数据集市，按企业整体需求规划数据结构，并加入各部门特定目标，从数据源抽取数据并汇总计算，形成统一的基础数据平台为数据分析、展现和挖掘提供统一的数据基础</span></h3>
+		    	</div>
+		    	<div class="full-wid alignCenter marTop10">
+		    		<h5 class="normal  alignLeft"><span class="darkGrey  fourTypeSizeMarginL">2.数据分析服务层：管理用户、元数据、多维数据、定制报表，以及用户保存和上传的各种数据和报表；还可以实现任务调度，实现灵活的数据发布和共享功能</span></h3>
+		    	</div>
+		    	<div class="full-wid alignCenter marTop10">
+		    		<h5 class="normal  alignLeft"><span class="darkGrey  fourTypeSizeMarginL">3.WEB互动视觉探索层：提供了多维分析、即时查询、仪表盘等多种数据分析和展示工具，为用户提供不同的数据呈现方式及个性化服务</span></h3>
+		    	</div>-->
+	    	</div>
+		</div>
+	</div>
+	<div class="section fp-auto-height" id="section28" data-anchor="8thPage">
+		<div class="applyXdt height600 blackEarth">
+			<div class="container2">
+				
+				<div class="col-6">
+					<h2 class="white alignLeft TwoEm marTop30">
+						<span>开始使用InsightView</span>
+					</h2>
+					<h5 class="marTop30">
+						<p class="OneEm white alignLeft">如想试用InsightView，请填输入您的详细信息，我们会尽快为您开通试用
+							账号，帮助您快速建立企业数据解决方案。</p>
+					</h5>
+				</div>
+				<div class="col-1">
+					
+				</div>
+				<div class="col-5 alignLeft ">
+					<input type="text" class="inputGrey marTop30 marLeft50 requestParam1" applyType = "insight" placeholder="姓名"/>
+					<div><span class="marLeft60 red requestTips1"></span></div>
+					<input type="text" class="inputGrey marTop10 marLeft50 requestParam2" placeholder="电话"/>
+					<div><span class="marLeft50 red requestTips2"></span><span class=" green requestTips21"></span></div>
+					<input type="text" class="inputGrey marTop10 marLeft50 requestParam3" placeholder="公司"/>
+					<div><span class="marLeft50 red requestTips3"></span></div>
+					<input type="text" class="inputGrey marTop10 marLeft50 requestParam4" placeholder="邮箱"/>
+					<div><span class="marLeft50 red requestTips4"></span></div>
+					<div class="marTop10 marLeft50 " id="applyRequest"><button class="btn_usefree applyMyRequst">提交申请</button></div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<div class="section fp-auto-height" id="section4">
+		<div class="info height360 bgBlack">
+			<div class="container">
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">产品中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="product.html#firstPage" class="grey fontNormal">InsightView行数</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="xdatainsight.html#firstPage" class="grey fontNormal">xDataInsight行明</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="icloudMiner.html#firstPage" class="grey fontNormal">iCloudMiner行智</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">行业案例</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=1" class="grey fontNormal">电商</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=2" class="grey fontNormal">政府</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=3" class="grey fontNormal">教育</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=4" class="grey fontNormal">制造</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">帮助中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">xDataInsight</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">iCloudMiner</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="aboutus.html" class="white">关于我们</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/about.aspx?t=10" class="grey fontNormal">公司介绍</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="aboutus.html" class="grey fontNormal">研发团队</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=17" class="grey fontNormal">公司动态</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" class="grey fontNormal">媒体报道</a></h3>
+				</div>
+				<div class="col-4 border10">
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whitePhone.png" class="logoBox"/><span class="white">&nbsp;028-86661321</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteHouse.png" class="logoBox"/><span class="white"> &nbsp;shuzhilian@unionbigdata.com</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteEnvo.png" class="logoBox"/><span class="white"> &nbsp;四川省成都市高新区吉泰五路88号香年广场T3栋5层</span>
+					</h3>
+					<h3 class="flexRowCenter">
+						<span class="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@2018 数之联 蜀ICP备13021642号-10</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	/*区分客户端*/
+//	if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+// 	    document.querySelector("#replaceImg").style.display = "block";
+// 		document.querySelector("#myVideo").style.display = "none";
+//	} else {
+//	    document.querySelector("#replaceImg").style.display = "none";
+// 		document.querySelector("#myVideo").style.display = "block";
+//	}
+		 var myFullpage = new fullpage('#fullpage', {
+    	/*【配置项】*/
+    	/*每一页的内容是否居中*/
+        verticalCentered: true,
+        /*section的背景颜色*/
+        sectionsColor: ['#222222', '#222222', '#222222','#222','#2F3030','#fff','#fff','#fff','#fff','#0e0d0d'],
+        /*section的锚点标记*/
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6rdPage', '7thpage', '8thPage',  'request'],
+        /*导航小圆点的显示*/
+        navigation:false,
+        fitToSection:false,
+        /*导航小圆点的位置*/
+        navigationPosition:"right",
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        autoScrolling:false,
+        /*event*/
+        afterLoad: function(origin, destination, direction){
+        	dealWithBackGround(destination.index);
+        	switch(destination.index+1){
+        	}
+        },
+        onLeave:function(origin, destination, direction){
+        	switch(destination.index+1){
+        	}
+        }
+    });
+    
+    
+</script>
+
+</body>
+</html>

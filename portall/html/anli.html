@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>xDataInsight-一站式敏捷大数据分析平台</title>
+	<meta name="author" content="chiring" />
+	<link rel="shortcut icon" href="../img/smallLogo.ico" type="image/x-icon" />
+    <meta name="description" content="xDataInsight从设计、开发到导入，协助企业建构大数据平台， 为数据分析打好基础，让数据与洞察更近一步" />
+    <meta name="keywords"  content="xdatainsight,xdata,商业智能,BI" />
+	<meta name="Resource-type" content="Document" />
+
+
+
+	<link rel="stylesheet" type="text/css" href="../css/fullpage.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/examples.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/1000Screen.css"/>
+	<style>
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/fullpage.js" type="text/javascript" charset="utf-8"></script>
+	
+<!--浮动顶栏-->
+<div class="commonHeader">
+	<a href="home.html#firstPage"><img class="xdtLogo" src="../img/logo.png"/></a>
+	<div class="phoneNumber">028-86661321</div>
+	<div class="phone"></div>
+	<a class="btn_login" href="https://www.xdatainsight.com/xdatainsight/Login" target="_blank">登录</a>
+	<a class="btn_usefree" href="xdatainsight.html#10thPage">免费试用</a>
+	<div class="toggle"></div>
+</div>
+<!--菜单栏-->
+<div id="bigmenu">
+	<div class="menu">
+		<div class="menuContainer">
+			<button class="btn_closeMenu btn_close"></button>
+			<nav class="slide-nav">
+				<ul>
+					<li class="rowOne">
+						<a class="oneStand" href="home.html#firstPage">首页</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">产品中心</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="product.html">InsightView-行数</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="xdatainsight.html">xDataInsight-行明</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="icloudMiner.html">iCloudMiner-行智</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">行业案例</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=1">电商</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=2">政府</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=3">教育</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=4">制造</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="helpDoc.html">帮助中心</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">关于我们</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/about.aspx?t=10" target="_blank">公司介绍</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="aboutus.html">研发团队</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=17" target="_blank">公司动态</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" target="_blank">媒体报道</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="menuCollapse">
+		</div>
+	</div>
+</div>
+<div id="fullpage">
+	<!--第一部分-->
+	<div class="section fp-auto-height" id="section0" >
+		<!--centerFont-->
+		<div class="height600 positionRel">
+			<div class="full-wid height600 anli">
+				<div class="height600 alignCenter flexDirectionColumn">
+					<h3 class="white TwoEm">行业案例</h3>
+					<h4 class="white marTop30">xDataInsight可以构建大型的综合的数据分析平台，也可以作为小型的个性化的解决方案</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--第二部分-->
+	<div class="section fp-auto-height" >
+		<div class="anliTab width60P bgBlue alignCenter">
+			<button class="height60 col-6 font18" anliType = "1">电商</button>
+			<button class="height60 col-2 font18" anliType = "2">政府</button>
+			<button class="height60 col-2 font18" anliType = "3">教育</button>
+			<button class="height60 col-2 font18" anliType = "4">制造</button>	
+		</div>
+	</div>
+	<!--第三部分-->
+	<div class="section anliSection anliSection1" id="section11" >
+	    <!--centerpart-->
+	    <div class="container4">
+	    	<div class="full-wid">
+	    		<h3 class="white  marTop30   TwoEm">阿坝电子商务项目</h3>
+	    	</div>
+	    	<div class="full-wid marTop10">
+	    		<h4 class="white  marTop30   One5Em">客户简介</h4>
+	    	</div>
+	    	<!--蓝色标记-->
+	    	<div class="full-wid ">
+	    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop30 alignLeft">
+	    		<h4 class=" "><span class="greyanli">到2017年，阿坝州电子商务交易额达到19亿元。在州委州政府的重视下，阿坝州电子商务取得了卓越业绩。阿坝州地方政府期望通过大数据技术推动 “农产品进城”，促进农村电商发展以及为政府电子商务政策制定提供数据决策依据。</span></h3>
+	    	</div>
+	    	<div class="marTop30 full-wid alignCenter heightM250">
+	    		<img src="../img/aba.jpg"/>
+	    	</div>
+	    	<div>
+				<h4 class="white">阿坝州电商数据总体分析</h4>
+	    	</div>
+	    </div>
+	</div>
+	<!--第四部分-->
+	<div class="section bgWhite fp-auto-height anliSection anliSection1" id="section12" >
+		<div class="height1300">
+		<div class="container4">
+			<div class="full-wid alignLeft">
+				<h2 class="black2b TwoEm">项目背景</h2>
+			</div>
+			<!--蓝色标记-->
+	    	<div class="full-wid alignLeft">
+	    		<h3><span class="width28  height3 bgGreyCe inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid alignLeft marTop30">
+				<h2 class="black2b One2Em fontBold">加强市场监管</h2>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">结合实际，通过对销售数据的深入挖掘和分析，实现线上线下监管相结合的方式，对州内的农产品销售情况进行统一监管。</h4>
+			</div>
+			<div class="full-wid alignLeft marTop30">
+				<h2 class="black2b One2Em fontBold">完善现有市场功能</h2>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">通过对产品销售的舆情分析，促进本州不断完善其市场功能。对现有农贸产品销售市场和淘宝、天猫、京东等电商平台的销售数据的分析，逐步改善本州产品销售市场条件，完善市场服务功能。</h4>
+			</div>
+			<div class="full-wid alignLeft marTop30">
+				<h2 class="black2b One2Em fontBold">推进农产品渠道对接</h2>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">通过对电商销售渠道、线下销售渠道阿坝州农产品销售情况的趋势分析和预测，建立本州与州内外电商销售渠道、大型连锁超市、农产品流通企业对接，构建长期、稳定、紧密的合作机制。</h4>
+			</div>
+			<div class="full-wid alignLeft marTop30">
+				<h2 class="black2b One2Em fontBold">发挥政府引导作用</h2>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">积极发挥政府的市场引导作用，根据全州产品销售的大数据分析，推进州内企业的科学化经营，协助各县引进有实力的商贸流通企业参与市场建设，共同打造阿坝州产销一体化经营模式。</h4>
+			</div>
+			<div class="height600  marTop30 alignCenter">
+				<img src="../img/outline5.png"/>
+			</div>
+			<div class="full-wid alignCenter marTop30">
+				<h2 class="black2b OneEm">架构图</h2>
+			</div>
+		</div>
+	   </div>
+	</div>
+	<!--第五部分-->
+	<div class="section fp-auto-height anliSection anliSection1" id="section13" >
+		<div class="height1700">
+			<div class="container4">
+				<div class="full-wid marTop10">
+		    		<h4 class="  marTop30   One5Em">项目成果</h4>
+		    	</div>
+		    	<!--蓝色标记-->
+		    	<div class="full-wid ">
+		    		<h3><span class="width28  bgGreyA9 height3  inlineBlock"></span></h3>
+		    	</div>
+				<div class="full-wid marTop10">
+		    		<h4 class="  marTop10 alignLeft  OneEm">根据客户需求，在成功部署自身的大数据平台的基础上，为客户定制开发了阿坝电商大数据系统，现阶段已成功应用于阿坝电商企业、农产品生产企业和政府</h4>
+		    	</div>
+		    	<div class="height600 marTop30">
+		    		<img src="../img/aba3.jpg" alt="" />
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="  marTop10   OneEm">理县农产品电商数据分析</h4>
+		    	</div>
+		    	<div class="height600 marTop30">
+		    		<img src="../img/aba4.jpg" alt="" />
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="  marTop10   OneEm">阿坝电商宏观与微观数据大屏展示系统</h4>
+		    	</div>
+		    	
+			</div>
+		</div>
+	</div>
+	<!--第六部分-->
+	<div class="section fp-auto-height anliSection anliSection1" id="section14" >
+		<div class="height400">
+			<div class="container4 ">
+				<div class="full-wid marTop20">
+		    		<h4 class="  marTop30 white  One5Em">方案价值</h4>
+		    	</div>
+		    	<!--蓝色标记-->
+		    	<div class="full-wid ">
+		    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">阿坝电子商务大数据平台，由大数据平台存储层、大数据处理与计算层、大数据应用层、大数据系统运维管理模块和大数据平台安全模块构成。其中，大数据平台存储层主要解决数据的分布式存储问题以及容灾备份；大数据处理与计算层针对底层的数据提供大数据分析功能，以及数据挖掘算法实现评价分析、情感分析和深度洞察分析，为阿坝电商大数据应用作支撑；大数据应用层将数据分析层的分析结果向外对接具体的业务需求，实现阿坝电商大数据的创新业务，通过WEB界面面向客户进行使用；运维管理实现平台部署、监控与报警的易用便捷性；平台安全保证了大数据平台的安全、稳定与可靠</h4>
+		    	</div>
+			</div>
+		</div>
+	</div>
+
+	<!--第二大部分-->
+	<!--第七部分-->
+	<div class="section anliSection anliSection2" id="section21">
+	    <!--centerpart-->
+	    <div class="container4">
+	    	<div class="full-wid">
+	    		<h3 class="white  marTop30   TwoEm">食品安全监测预警分析</h3>
+	    	</div>
+	    	<div class="full-wid marTop10">
+	    		<h4 class="white  marTop30   One5Em">客户简介</h4>
+	    	</div>
+	    	<!--蓝色标记-->
+	    	<div class="full-wid ">
+	    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop30 alignLeft">
+	    		<h4 class=" "><span class="greyanli">2017年6月29日，国务院食品安全委员会办公室、国家食药监总局、农业部在北京启动了“全国食品安全示范城市、农产品质量安全县创建成果展览”。成都作为第二批国家食品安全示范城市的创建市，运用科技手段直观展现食品安全监测预警数据中心在大数据分析应用方面取得的成绩、食品溯源工作的进展，以及在餐饮行业生产工业化、工艺标准化、溯源信息化的探索与亮点，获得高度肯定。</span></h3>
+	    	</div>
+	    	<div class="marTop30 full-wid alignCenter heightM250">
+	    		<img src="../img/secure.jpg"/>
+	    	</div>
+	    	<div>
+				<h4 class="white">食品安全监管辅助决策系统</h4>
+	    	</div>
+	    </div>
+	</div>
+	<!--第八部分-->
+	<div class="section bgWhite fp-auto-height anliSection anliSection2" id="section22" >
+		<div class="height1500">
+		<div class="container4">
+			<div class="full-wid alignLeft">
+				<h2 class="black2b TwoEm">项目背景</h2>
+			</div>
+			<!--蓝色标记-->
+	    	<div class="full-wid alignLeft">
+	    		<h3><span class="width28  height3 bgGreyCe inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;民以食为天，消费者能够“吃得好，吃得安全”，是政府食品安全监管部门重点关心的社会问题。然而，随着我国市场经济的发展和经济体制改革，食品安全问题频发安全形势、舆论环境严峻，政府食品安全监管面临若干挑战：</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">1.行业监管对象愈加复杂。食品生产经营单位众多、供给庞大，而安全问题涉及生产、流通、销售、服务等多个环节，不法分子逃避监管、规避检查、对抗执法手段复杂</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">2.安全面临多重风险考验。全国食品“小、脏、散、乱”的传统安全风险依然存在，海关口岸进口食品种类、数量逐年增加，输入性风险不断增强，食品污染风险因素增多食品安全问题日益多样化。</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">3.新技术、新业态考验监管智慧。网络餐饮、外卖订餐等新业态在“互联网+”带动下快速发展，新技术、新材料广泛应用于食品研制生产。</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">4.社会诚信环境有待进一步优化，当前食品企业守法意识、安全意识、责任意识亟待提高，社会信用信息共享体系建设滞后，社会诚实信用机制欠缺，食品安全社会多元共治体系有待完善。</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">5.社会舆论环境高度关注。随着食品行业生产量和交易量持续增长，公众消费需求升级，“求吃饱”转向了“求吃好”，整个社会对食品安全的关注度、敏感度空前高涨。</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">6.监管人员少、执法装备缺。</h4>
+			</div>
+			<div class="full-wid marTop30 alignLeft">
+				<h4 class="grey">7.过往食品安全信息化建设，重业务流程电子化而轻数据分析利用，食品安全监管智能化应用严重不足，传统的行政监管方法越来越难以应对海量监管对象，难以发现潜在风险。</h4>
+			</div>
+			<div class="height600  marTop30 alignCenter">
+				<img src="../img/secure2.png"/>
+			</div>
+			<div class="full-wid">
+				<h4 class="grey">项目架构图</h4>
+			</div>
+		</div>
+	   </div>
+	</div>
+	<!--第九部分-->
+	<div class="section fp-auto-height anliSection anliSection2" id="section23">
+		<div class="height600">
+			<div class="container4 ">
+				<div class="full-wid marTop20">
+		    		<h4 class="  marTop30 white  One5Em">方案价值</h4>
+		    	</div>
+		    	<!--蓝色标记-->
+		    	<div class="full-wid ">
+		    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">食品安全监测预警数据中心利用信息化业务系统累计的大量有关食品生产、食品经营、食品餐饮、行政审批以及日常监管、稽查执法、抽检监测、投诉举报方面的数据，构建基于关联规则挖掘、XGBoost等大数据分析挖掘模型的大数据食品安全监管平台，实现多源数据融合、抽检计划自动制定、市场主体量化评级、网络餐饮监管、图谱化抽检信息查询等功能，为推动落实十三五食品安全规划要求，践行基于数据的公共治理模式，实现食品安全智慧监管，为建设食品安全示范县工作提供强劲支撑，带动提升食品安全保障水平，打造安心、放心的食品消费环境</h4>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">1.将多源数据融合技术引入食品安全监管领域，汇聚多方数据，通过分析挖掘最终辅助抽签决策，解决食药监抽检任务的调度，提高工作效率，节省投入成本，提高监管靶向性和高效性</h4>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">2.将知识图谱引入食品安全信息的关联查询，首次以图谱的形式展现标准数据，更符合人类思维和观察习惯。3、将时序分析技术引入食品安全指数的分析中，其优点在于补充了部分缺失值让数据更加饱和，并且当前时间戳的拟合合格率从物理上反应的是在较近的时间段内合格率的叠加情况，体现出了合格率的变化趋势，得到的结果更稳定，具有更好的鲁棒性(Robustness)。</h4>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">3.构建市场主体风险量化评级体系，根据融合的多源异构数据，参考借鉴国内外评级机构的理论体系（如穆迪、标普、惠誉等），从主体固有属性体现的静态风险和经营过程中的动态风险两个层次建立市场主体的风险量化评级体系。梳理历史监管数据中的评价数据为标签，通过XGBoost等机器学习技术构建市场主体量化评级模型实现对市场主体自动、客观、快速的分级评价。</h4>
+		    	</div>
+			</div>
+		</div>
+	</div>
+	<!--第三大部分-->
+	<!--第十部分-->
+	<div class="section fp-auto-height anliSection anliSection3" id="section31" >
+	    <!--centerpart-->
+	    <div class="height1600">
+			<div class="container4">
+	    	<div class="full-wid">
+	    		<h3 class="white  marTop20   TwoEm">鄂尔多斯教育局项目</h3>
+	    	</div>
+	    	<div class="full-wid marTop10">
+	    		<h4 class="white  marTop20   One5Em">项目背景</h4>
+	    	</div>
+	    	<!--蓝色标记-->
+	    	<div class="full-wid ">
+	    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop20 alignLeft">
+	    		<h4 class=" "><span class="greyanli">根据“十三五”国家信息化规划，统筹实施网络强国战略、大数据战略和“互联网+”行动，教育信息化的建设也迫在眉睫。以省级教育管理信息系统建设为抓手，加强学校管理基础资料、数据收集整理，促进学校管理标准化、规范化、信息化，推进政府教育管理信息化。加强中小学校园网建设，逐步建成数字化校园。加快省、市、县三级教育资源公共服务平台建设，逐步扩大网络教育资源服务覆盖率。同时针对教育管理信息系统的构建，提出了建设鄂尔多斯市电教资源分析平台的构想，促使鄂尔多斯教育发展的可持续性，促进教育管理的规范化，为教育管理信息化的相关领域的研究和应用提供了可借鉴的模式</span></h3>
+	    	</div>
+	    	<div class="marTop30 full-wid alignCenter height500">
+	    		<img src="../img/edu1.jpg"/>
+	    	</div>
+	    	<div>
+				<h4 class="white marTop10">教育信息综合展示</h4>
+	    	</div>
+	    	<div class="marTop30 full-wid alignCenter height500">
+	    		<img src="../img/edu2.jpg"/>
+	    	</div>
+	    	<div>
+				<h4 class="white marTop10">教育指标综合分析</h4>
+	    	</div>
+	    	</div>
+	    </div>
+	</div>
+	<!--第十一部分-->
+	<div class="section bgWhite fp-auto-height anliSection anliSection3" id="section32" >
+		<div class="height1800">
+		<div class="container4">
+			<div class="full-wid alignLeft">
+				<h2 class="black2b TwoEm">项目目标</h2>
+			</div>
+			<!--蓝色标记-->
+	    	<div class="full-wid alignLeft">
+	    		<h3><span class="width28  height3 bgGreyCe inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">一期建设目标主要针对鄂尔多斯市辖区内所有小学、中学及中等专业学校，包括民族学校的基础数据进行统一管理，实现以下建设目标：</h4>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">1. 通过创新教学模式，优化教学过程，提高教学质量和学生成绩，提升升学率来完成优化教学的目标</h4>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">2. 通过优化校务管理、优化教师管理和教学资源共享，来促进教师成长，增强对教师和学生的管理。</h4>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">3. 建设全国领先大数据校园，树立示范性的教育品牌。</h4>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">4. 社会诚信环境有待进一步优化，当前食品企业守法意识、安全意识、责任意识亟待提高，社会信用信息共享体系建设滞后，社会诚实信用机制欠缺，食品安全社会多元共治体系有待完善。</h4>
+			</div>
+			
+			<div class="height650 marTop10 alignCenter">
+				<img src="../img/edu3.jpg"/>
+			</div>
+			<div class="full-wid">
+				<h4 class="grey">电教设备使用情况分析</h4>
+			</div>
+			<div class="height600   alignCenter">
+				<img src="../img/edu4.jpg"/>
+			</div>
+			<div class="full-wid marTop10">
+				<h4 class="grey">学校住宿资源综合分析</h4>
+			</div>
+		</div>
+	   </div>
+	</div>
+	
+	<!--第四大部分-->
+	<!--第十二部分-->
+	<div class="section anliSection anliSection4" id="section41" >
+	    <!--centerpart-->
+	    <div class="height1200">
+	    <div class="container4">
+	    	<div class="full-wid">
+	    		<h3 class="white  marTop30   TwoEm">五粮液营销地图</h3>
+	    	</div>
+	    	<div class="full-wid marTop10">
+	    		<h4 class="white  marTop30   One5Em">项目背景</h4>
+	    	</div>
+	    	<!--蓝色标记-->
+	    	<div class="full-wid ">
+	    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop10 alignLeft">
+	    		<h4 class=" "><span class="greyanli">随着物联网、云计算、互联网、大数据、区块链等技术的成熟与发展，传统企业也逐渐重视新技术带来的新机遇，五粮液作为国内白酒行业的龙头企业，正处于传统企业转型升级的关键节点，已经开始有意识的开展成体系的信息化建设与大数据应用，根据其战略安排与竞争策略，在2017年在营销业务开展方面提出 “百城千县万店”工程，即要在上百个大中城市、上千个重点县区启动上万家核心销售终端的建设，包括依托专卖店、旗舰店和社会有影响力的销售终端。五粮液公司以"百千万"工程为抓手，依托于全体合作伙伴，系统性地构建起五粮液的核心运营商体系、核心终端体系和消费者会员体系，整个工程预计三年时间全面完成。未来，这三大体系将通过信息化系统的融通，共同组成五粮液的大数据营销系统，并进一步推动企业完成适应于市场的组织再造，从而有效应对、从容参与新的市场竞争。</span></h3>
+	    	</div>
+	    	<div class="marTop30 full-wid alignCenter height600">
+	    		<img src="../img/made1.png"/>
+	    	</div>
+	    	<div class="full-wid marTop10">
+	    		<h4 class="white  marTop30   OneEm">五粮液营销地图</h4>
+	    	</div>
+	    </div>
+	    </div>
+	</div>
+	<!--第十三部分-->
+	<div class="section bgWhite anliSection anliSection4" id="section42" >
+		<div class="container4">
+			<div class="full-wid alignLeft">
+				<h2 class="black2b TwoEm">项目需求</h2>
+			</div>
+			<!--蓝色标记-->
+	    	<div class="full-wid alignLeft">
+	    		<h3><span class="width28  height3 bgGreyCe inlineBlock"></span></h3>
+	    	</div>
+	    	<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     根据五粮液百城千县万店建设工程对地域网点分布和信息资源利用要求，如何简单、方便、快速、有效地管理分布复杂的终端门店, 进而准确进行市场空间的划分、合理配置五粮液拥有的建设资源，对百千万工程的建设显得尤为重要。</h4>
+			</div>
+			<div class="full-wid marTop10 alignLeft">
+				<h4 class="grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     正式基于此，提出营销地图的需求，通过对终端数据的多维度采集，并进行大数据精细化分析，采用灵活的BI可视化展示，直观的展示当前的整体建设进度与各区域建设目标的达成情况，同时根据建设目标，运用大数据技术，智能的推荐潜在的终端建设网点，辅助“百千万”工程可以建好、用好、管好庞大的终端网络。</h4>
+			</div>
+			<div class="height600  marTop10 alignCenter">
+				<img src="../img/made2.png"/>
+			</div>
+			<div class="full-wid">
+				<h4 class="grey">五粮液营销地图</h4>
+			</div>
+	   </div>
+	</div>
+	<!--第十四部分-->
+	<div class="section fp-auto-height anliSection anliSection4" id="section43" >
+		<div class="height300">
+			<div class="container4 ">
+				<div class="full-wid marTop20">
+		    		<h4 class="  marTop30 white  One5Em">项目目标</h4>
+		    	</div>
+		    	<!--蓝色标记-->
+		    	<div class="full-wid ">
+		    		<h3><span class="width28  height3 bgWhite inlineBlock"></span></h3>
+		    	</div>
+		    	<div class="full-wid marTop10">
+		    		<h4 class="marTop10  white alignLeft OneEm">营销地图展示系统，以服务于五粮液“百城千县万店建设工程”为目标，以百千万工程建设所涉及到的数据为核心，以大数据BI可视化技术、GIS地理信息系统为支撑，与五粮液信息管理系统进行融合，为百千万工程提供强大的空间分析能力和丰富的地图表现形式，实现五粮液百千万工程的业务属性数据与空间数据的融合管理、分析和应用,为各级管理建设者提供直观的进度展示和多维度的决策支持，实现智能分析、科学运营百城千县万店工程的目标。</h4>
+		    	</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section fp-auto-height" id="section4">
+		<div class="info height360 bgBlack">
+			<div class="container">
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">产品中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="product.html#firstPage" class="grey fontNormal">InsightView行数</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="xdatainsight.html#firstPage" class="grey fontNormal">xDataInsight行明</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="icloudMiner.html#firstPage" class="grey fontNormal">iCloudMiner行智</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">行业案例</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=1" class="grey fontNormal">电商</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=2" class="grey fontNormal">政府</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=3" class="grey fontNormal">教育</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=4" class="grey fontNormal">制造</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">帮助中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">xDataInsight</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">iCloudMiner</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="aboutus.html" class="white">关于我们</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/about.aspx?t=10" class="grey fontNormal">公司介绍</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="aboutus.html" class="grey fontNormal">研发团队</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=17" class="grey fontNormal">公司动态</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" class="grey fontNormal">媒体报道</a></h3>
+				</div>
+				<div class="col-4 border10">
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whitePhone.png" class="logoBox"/><span class="white">&nbsp;028-86661321</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteHouse.png" class="logoBox"/><span class="white"> &nbsp;shuzhilian@unionbigdata.com</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteEnvo.png" class="logoBox"/><span class="white"> &nbsp;四川省成都市高新区吉泰五路88号香年广场T3栋5层</span>
+					</h3>
+					<h3 class="flexRowCenter">
+						<span class="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@2018 数之联 蜀ICP备13021642号-10</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		
+		
+		
+		 var myFullpage = new fullpage('#fullpage', {
+    	/*【配置项】*/
+    	/*每一页的内容是否居中*/
+        verticalCentered: true,
+        /*section的背景颜色*/
+        sectionsColor: ['#07080c','#0b0b0d', '#07080c', '#f7f7f7','#fff','#4353ff','#1c1c21','#fff','#4353ff','#1c1c21','#fff','#1c1c21','#fff','#4353ff'],
+        /*section的锚点标记*/
+        
+        /*导航小圆点的显示*/
+        navigation:false,
+        /*导航小圆点的位置*/
+        navigationPosition:"right",
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        autoScrolling:false,
+        fitToSection:false,
+        /*event*/
+        afterLoad: function(origin, destination, direction){
+        	dealWithBackGround(destination.index);
+        	switch(destination.index+1){
+        	}
+        },
+        onLeave:function(origin, destination, direction){
+        	switch(destination.index+1){
+        	}
+        }
+    });
+    /*默认展示第几组*/
+    function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+    var defaultType = getUrlParam("type");
+    $(".anliSection").hide();
+    $(".anliSection"+defaultType).show();
+    /*同时控制tab样式*/
+   $(".anliTab>button:nth-child("+defaultType+")").removeClass("col-2").addClass("col-6");
+   $(".anliTab>button:nth-child("+defaultType+")").siblings().removeClass("col-6").addClass("col-2");
+	
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+	
+	.centerFont{
+		position: relative;
+		z-index: 40;
+		width: 100%;
+		letter-spacing: 40px;
+		font-weight: bold;
+	}
+	.centerSmallFont{
+		position: relative;
+		z-index: 40;
+		margin-top: 40px;
+		widows: 100%;
+		color: white;
+		font-size: 18px;
+	}
+	/*最顶部*/
+	/*logo*/
+	.xdtLogo{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 40;
+	    display: inline-block;
+	    width:198px;
+	    height: 46px;
+	    margin-top: 12px;
+	    margin-left: 40px;
+	}
+	.toggle{
+		width:44px;
+		height:30px;
+		background:green;
+		margin-right: 40px;
+		background: url(../img/toggle.png);
+		cursor: pointer;
+	}
+	.phone{
+		width:34px;
+		height:34px;
+		margin-right: 34px;
+		background:url(../img/phone.png);
+		cursor: pointer;
+	}
+	.btn_usefree{
+		display: inline-block;
+		margin-right: 29px;
+		width: 96px;
+		height: 40px;
+		background: #2f54eb;
+		color: white;
+		border: none;
+		text-align: center;
+		line-height: 40px;
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.btn_login{
+		width: 96px;
+		height: 40px;
+		color: white;
+		background:none;
+		margin-right: 29px;
+		border:1px solid white;
+		text-align: center;
+		font-size: 14px;
+		line-height: 40px;
+		cursor: pointer;
+	}
+	.phoneNumber{
+		height: 30px;
+		display: flex;
+		align-items: center;
+		margin-right: 14px;
+		font-size: 1.2em;
+		color: white;
+		text-overflow: ellipsis;
+ 		white-space: nowrap;
+		width: 0;
+		overflow: hidden;
+		transition-property: all;
+		transition-duration: 0.4s;
+	}
+	.phoneNumberShow{
+		width: 134px;
+		transition-property: all;
+		transition-duration: 0.4s;
+	}
+	.menu{
+		position: absolute;
+		display: flex;
+		flex-direction: row-reverse;
+		width:100%;
+		align-content: right center;
+		/*background:#1f1f1f;*/ 
+		height: 100%;
+		z-index: 100;
+		right: 0px;
+		
+	}
+	.menuContainer{
+		width: 330px;
+		background: #1f1f1f;
+	}
+	.menuCollapse{
+		width: calc(100% - 330px);
+		background: rgba(0,0,0,0.5);
+	}
+	.btn_closeMenu{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		width: 20px;
+		height: 20px;
+	}
+	.slide-nav{
+		width: 100%;
+		height: 100%;
+		color: white;
+		text-decoration: none;
+	}
+	.oneStand{
+		color:white;
+		font-size: 24px;
+	}
+/*}*/
+

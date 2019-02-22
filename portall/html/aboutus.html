@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>xDataInsight-一站式敏捷大数据分析平台</title>
+	<meta name="author" content="chiring" />
+	<link rel="shortcut icon" href="../img/smallLogo.ico" type="image/x-icon" />
+    <meta name="description" content="xDataInsight从设计、开发到导入，协助企业建构大数据平台， 为数据分析打好基础，让数据与洞察更近一步" />
+    <meta name="keywords"  content="xdatainsight,xdata,商业智能,BI" />
+	<meta name="Resource-type" content="Document" />
+
+
+
+	<link rel="stylesheet" type="text/css" href="../css/fullpage.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/examples.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/1000Screen.css"/>
+	<style>
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+
+	
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+	<script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/fullpage.js" type="text/javascript" charset="utf-8"></script>
+	
+<!--浮动顶栏-->
+<div class="commonHeader">
+	<a href="home.html#firstPage"><img class="xdtLogo" src="../img/logo.png"/></a>
+	<div class="phoneNumber">028-86661321</div>
+	<div class="phone"></div>
+	<a class="btn_login" href="https://www.xdatainsight.com/xdatainsight/Login" target="_blank">登录</a>
+	<a class="btn_usefree" href="xdatainsight.html#10thPage">免费试用</a>
+	<div class="toggle"></div>
+</div>
+<!--菜单栏-->
+<div id="bigmenu">
+	<div class="menu">
+		<div class="menuContainer">
+			<button class="btn_closeMenu btn_close"></button>
+			<nav class="slide-nav">
+				<ul>
+					<li class="rowOne">
+						<a class="oneStand" href="home.html#firstPage">首页</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">产品中心</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="product.html">InsightView-行数</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="xdatainsight.html">xDataInsight-行明</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="icloudMiner.html">iCloudMiner-行智</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">行业案例</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=1">电商</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=2">政府</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=3">教育</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="anli.html?type=4">制造</a>
+							</li>
+						</ul>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="helpDoc.html">帮助中心</a>
+					</li>
+					<li class="rowOne">
+						<a class="oneStand" href="#">关于我们</a>
+						<ul>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/about.aspx?t=10" target="_blank">公司介绍</a>		
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="aboutus.html">研发团队</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=17" target="_blank">公司动态</a>
+							</li>
+							<li class="rowTwo">
+								<a class="twoStand" href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" target="_blank">媒体报道</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="menuCollapse">
+		</div>
+	</div>
+</div>
+
+<div id="fullpage">
+	<!--第一部分-->
+	<div class="section fp-auto-height" id="section0" data-anchor="firstPage">
+		<!--centerFont-->
+		<div class="height800 positionRel">
+			<div class="full-wid height600 aboutUs">
+			</div>
+			<div class="bgBlue width60P height300 bottom50 leftP20">
+				<h1 class="marTop30 TriEm"><span class="white">核心研发团队</span></h1>
+				<div class="full-wid">
+		    		<h3><span class="width28 height3 bgWhite inlineBlock"></span></h3>
+		    	</div>
+		    	<h4 class="marTop40 alignCenter"><span class="white width80P OneEm">我们的愿景 :  不忘初心，专注大数据决策分析领域，并深耕；让人人成为数据分析师</span></h4>
+		    	<h4 class="alignCenter marTop10 "><span class="white width80P OneEm">我们的使命 :  为企业提供科学数据化运营服务，连接数据与决策，让创新驱动业务增长</span></h2>
+			</div>
+		</div>
+		
+		
+	</div>
+	<!--第二部分-->
+	<div class="section fp-auto-height " id="section21" data-anchor="secondPage">
+	    <!--centerpart-->
+	    <div class=" height1000">
+	    	<div class="container3">
+	    		<div class="height230">
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/zhujunhua.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">朱军华</h1>
+	    				<h4 class="marTop10">产品VP</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/goutingyong.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">苟廷勇</h1>
+	    				<h4 class="marTop10">资深产品经理</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/yuanyang.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">袁阳</h1>
+	    				<h4 class="marTop10">数据产品经理</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/wangxiangyong.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">王向勇</h1>
+	    				<h4 class="marTop10">算法专家</h4>
+	    			</div>
+	    		</div>
+	    		<div class="height230">
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/tangwuyi.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">唐无衣</h1>
+	    				<h4 class="marTop10">前端架构师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/yumingxiao.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">俞明霄</h1>
+	    				<h4 class="marTop10">资深前端工程师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/liwei.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">李伟</h1>
+	    				<h4 class="marTop10">资深前端工程师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/zuoqiang.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">左强</h1>
+	    				<h4 class="marTop10">资深前端工程师</h4>
+	    			</div>
+	    		</div>
+	    		<div class="height230">
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/liudaorong.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">刘道荣</h1>
+	    				<h4 class="marTop10">资深数据仓库专家</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/yanhuinan.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">闫惠楠</h1>
+	    				<h4 class="marTop10">资深前端工程师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/zhangcuiying.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">张翠英</h1>
+	    				<h4 class="marTop10">资深设计师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/hewei.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">何伟</h1>
+	    				<h4 class="marTop10">资深后端工程师</h4>
+	    			</div>
+	    		</div>
+	    		<div class="height230">
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/qisijia.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">漆思加</h1>
+	    				<h4 class="marTop10">资深后端工程师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/lanyuheng.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">兰雨恒</h1>
+	    				<h4 class="marTop10">资深后端工程师</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/zhanghongyin.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">张洪银</h1>
+	    				<h4 class="marTop10">数据架构专家</h4>
+	    			</div>
+	    			<div class="col-3 alignCenter flexDirectionColumn">
+	    				<div class="height200 alignCenter">
+		    				<div class=" circleHead">
+		    					<img data-src="../img/lipeizhen.jpg"/>	
+		    				</div>
+	    				</div>
+	    				<h1 class="black One4Em">李培真</h1>
+	    				<h4 class="marTop10">算法专家</h4>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="section fp-auto-height" id="section4">
+		<div class="info height360 bgBlack">
+			<div class="container">
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">产品中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="product.html#firstPage" class="grey fontNormal">InsightView行数</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="xdatainsight.html#firstPage" class="grey fontNormal">xDataInsight行明</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="icloudMiner.html#firstPage" class="grey fontNormal">iCloudMiner行智</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">行业案例</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=1" class="grey fontNormal">电商</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=2" class="grey fontNormal">政府</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=3" class="grey fontNormal">教育</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="anli.html?type=4" class="grey fontNormal">制造</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="#" class="white">帮助中心</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">xDataInsight</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="helpDoc.html" class="grey fontNormal">iCloudMiner</a></h3>
+				</div>
+				<div class="col-2 border10">
+					<h3 class="marTop30 alignLeft"><a href="aboutus.html" class="white">关于我们</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/about.aspx?t=10" class="grey fontNormal">公司介绍</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="aboutus.html" class="grey fontNormal">研发团队</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=17" class="grey fontNormal">公司动态</a></h3>
+					<h3 class="marTop30 alignLeft font16"><a href="http://www.unionbigdata.com/news.aspx?t=18#newsPage" class="grey fontNormal">媒体报道</a></h3>
+				</div>
+				<div class="col-4 border10">
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whitePhone.png" class="logoBox"/><span class="white">&nbsp;028-86661321</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteHouse.png" class="logoBox"/><span class="white"> &nbsp;shuzhilian@unionbigdata.com</span>
+					</h3>
+					<h3 class="marTop30 alignLeft flexRowCenter">
+						<img src="../img/whiteEnvo.png" class="logoBox"/><span class="white"> &nbsp;四川省成都市高新区吉泰五路88号香年广场T3栋5层</span>
+					</h3>
+					<h3 class="flexRowCenter">
+						<span class="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@2018 数之联 蜀ICP备13021642号-10</span>
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	/*区分客户端*/
+//	if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+// 	    document.querySelector("#replaceImg").style.display = "block";
+// 		document.querySelector("#myVideo").style.display = "none";
+//	} else {
+//	    document.querySelector("#replaceImg").style.display = "none";
+// 		document.querySelector("#myVideo").style.display = "block";
+//	}
+		 var myFullpage = new fullpage('#fullpage', {
+    	/*【配置项】*/
+    	/*每一页的内容是否居中*/
+        verticalCentered: true,
+        /*section的背景颜色*/
+        sectionsColor: ['#fff', '#fff', '#1c1c21','#222','#2F3030','#222','#4353ff','#fff','#fff','#0e0d0d'],
+        /*section的锚点标记*/
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage'],
+        /*导航小圆点的显示*/
+        navigation:false,
+        fitToSection:false,
+        /*导航小圆点的位置*/
+        navigationPosition:"right",
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        autoScrolling:false,
+        /*event*/
+        afterLoad: function(origin, destination, direction){
+        	dealWithBackGround(destination.index);
+        	switch(destination.index+1){
+        	}
+        },
+        onLeave:function(origin, destination, direction){
+        	switch(destination.index+1){
+        	}
+        }
+    });
+    
+    
+</script>
+
+</body>
+</html>
